@@ -15,11 +15,11 @@ namespace T2_Practica
         static PilaNotas pilaDeEliminados = new PilaNotas(50);
         static void Main(string[] args)
         {
-            GestionReserva();
+            RegistroDENotas();
             Console.ReadKey();
         }
 
-        static void GestionReserva()
+        static void RegistroDENotas()
         {
             // Precargar datos de pacientes al iniciar el programa
             CargarPacientesRegistro.PrecargarDatos(Cola);
@@ -132,13 +132,6 @@ namespace T2_Practica
         static void MostrarReporteNotas()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("[2] Registro de Notas");
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("      Código de alumno      |      Código de Curso     |    Nota 1   |    Nota 2   |   Nota 3   |   Promedio   |    Observación   ");
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-
             if (!Cola.vaciaCola())
             {
                 Cola.verCola();
@@ -147,8 +140,6 @@ namespace T2_Practica
             {
                 Console.WriteLine("No existen registros.");
             }
-
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
         }
 
         // Método para eliminar la primera reserva de la cola
