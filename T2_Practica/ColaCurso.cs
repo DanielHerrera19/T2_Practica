@@ -91,5 +91,26 @@ namespace T2_Practica
         {
             return final < frente; // Verifica si la cola está vacía
         }
+
+        public NodoCurso BuscarCurso(string codigoCurso)
+        {
+            for (int i = frente; i <= final; i++)
+            {
+                if (cursos[i].Codigo.Equals(codigoCurso, StringComparison.OrdinalIgnoreCase))
+                {
+                    return cursos[i]; // Devolver el nodo encontrado
+                }
+            }
+            return null; // No encontrado
+        }
+
+        public NodoCurso obtenercodigoaleatorio(int detener)
+        {
+            NodoCurso retorno;
+            NodoCurso T = cursos[detener];
+            retorno = T;
+            return retorno;
+        }
+
     }
 }

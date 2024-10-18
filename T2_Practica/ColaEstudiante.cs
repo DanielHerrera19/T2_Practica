@@ -78,5 +78,19 @@ namespace T2_Practica
         {
             return final < frente;  // Verifica si la cola está vacía
         }
+
+        public NodoEstudiante BuscarEstudiante(string codigoAlumno)
+        {
+            for (int i = frente; i <= final; i++)
+            {
+                if (estudiantes[i].CodigoAlumno.Equals(codigoAlumno, StringComparison.OrdinalIgnoreCase)) // Cambiado a estudiantes[i]
+                {
+                    return estudiantes[i]; // Devolver el nodo encontrado
+                }
+            }
+            return null; // No encontrado
+        }
+
+        
     }
 }

@@ -8,7 +8,7 @@ namespace T2_Practica
 {
     internal class CargaEstudiante
     {
-        public static void PrecargarDatos(ColaEstudiante cola)
+        public  void PrecargarDatos(ColaEstudiante cola)
         {
             // Precargar estudiantes con los datos solicitados
             cola.Encola(new NodoEstudiante("ALW-001", "JORGE PEREZ LLANOS", "SOLTERO", "M", 20));

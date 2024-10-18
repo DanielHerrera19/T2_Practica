@@ -8,7 +8,7 @@ namespace T2_Practica
 {
     internal class CursosPrecargados
     {
-        public static void PrecargarDatos(ColaCurso cola)
+        public void PrecargarDatos(ColaCurso cola)
         {
             // Crear nodos con datos predefinidos y agregarlos a la cola
             cola.encola(new NodoCurso("CUR-001", "FUNDAMENTOS DE ALGORITMOS", 3, 6));

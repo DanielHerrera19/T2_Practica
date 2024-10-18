@@ -11,11 +11,17 @@ namespace T2_Practica
     {
         static ColaCurso colaCursos = new ColaCurso(50);
         static ColaEstudiante ColaE = new ColaEstudiante(50);
-
+        public static CursosPrecargados Cursospre = new CursosPrecargados();
+        public static CargaEstudiante CargaE = new CargaEstudiante();
         static ColaNotas Cola = new ColaNotas(50);
+        public static CargarRegistroNotas CargarNO = new CargarRegistroNotas();
         static PilaNotas pilaDeEliminados = new PilaNotas(50);
+
         static void Main(string[] args)
         {
+            Cursospre.PrecargarDatos(colaCursos);
+            CargaE.PrecargarDatos(ColaE);
+            CargarNO.PrecargarDatos(Cola,colaCursos,ColaE);
             Pantalla_Principal();
             Console.ReadKey();
         }
@@ -23,7 +29,6 @@ namespace T2_Practica
         static void RegistroDENotas()
         {
             // Precargar datos de pacientes al iniciar el programa
-            CargarRegistroNotas.PrecargarDatos(Cola);
             int opcion;
 
             // Definir el menú para la cola de reservas
@@ -98,6 +103,17 @@ namespace T2_Practica
             Console.Clear();
             Console.WriteLine("[1] Registrar de Notas");
 
+            // Obtener el código de curso y el código de alumno
+            Console.Write("Código del Alumno: ");
+            string codigoAlumno = Console.ReadLine();
+            Console.Write("Código del Curso: ");
+            string codigoCurso = Console.ReadLine();
+
+            // Buscar el NodoEstudiante y NodoCurso utilizando sus códigos
+            NodoEstudiante estudiante = ColaE.BuscarEstudiante(codigoAlumno); // Implementa este método
+            NodoCurso curso = colaCursos.BuscarCurso(codigoCurso); // Implementa este método
+
+
             double nota1 = ObtenerNota("Nota 1: ");
             double nota2 = ObtenerNota("Nota 2: ");
             double nota3 = ObtenerNota("Nota 3: ");
@@ -116,7 +132,7 @@ namespace T2_Practica
             }
 
             // Crear el nodo de reserva utilizando el constructor con parámetros
-            NodoNotas NOTAS = new NodoNotas(nota1, nota2, nota3, promedio, observacion);
+            NodoNotas NOTAS = new NodoNotas(estudiante, curso,nota1, nota2, nota3, promedio, observacion);
 
             // Agregar la reserva a la cola
             if (Cola.encola(NOTAS))
@@ -160,6 +176,7 @@ namespace T2_Practica
             {
                 Console.WriteLine("Error: No hay notas para eliminar.");
             }
+            Console.ReadLine();
         }
 
         // Método para vaciar la cola
@@ -189,8 +206,6 @@ namespace T2_Practica
 
         static void PantallaCursos()
         {
-
-            CursosPrecargados.PrecargarDatos(colaCursos);
             int opcion;
 
             do
@@ -202,11 +217,13 @@ namespace T2_Practica
                 {
                     case 1:
                         AgregarCurso();
+                        Console.ReadLine();
 
                         break;
 
                     case 2:
                         MostrarCursos();
+                        Console.ReadLine();
                         break;
 
                     case 3:
@@ -329,7 +346,6 @@ namespace T2_Practica
         {
 
             // Precargar datos de estudiantes al iniciar el programa
-            CargaEstudiante.PrecargarDatos(ColaE);
             int opcion;
 
             // Definir el menú para la cola de estudiantes
@@ -490,7 +506,7 @@ namespace T2_Practica
                     switch (opcion)
                     {
                         case 1:
-                            MostrarMenuCursos();
+                            PantallaCursos();
                             break;
 
                         case 2:
@@ -498,7 +514,7 @@ namespace T2_Practica
                             break;
 
                         case 3:
-                            MostrarMenu();
+                            RegistroDENotas();
                             break;
 
                         case 4:

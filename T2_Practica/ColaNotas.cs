@@ -65,7 +65,9 @@ namespace T2_Practica
                 for (int i = frente; i <= final; i++)
                 {
                     // Mostrar los datos de la reserva
-                    Console.WriteLine(RegisNotas[i].Nota1.ToString().PadRight(15) + " | " +
+                    Console.WriteLine(RegisNotas[i].CodigoAlumno.ToString().PadRight(15) + " | " +
+                                      RegisNotas[i].CodigoCurso.ToString().PadRight(15) + " | " +  
+                                      RegisNotas[i].Nota1.ToString().PadRight(15) + " | " +
                                       RegisNotas[i].Nota2.ToString().PadRight(15) + " | " +
                                       RegisNotas[i].Nota3.ToString().PadRight(12) + " | " +
                                       RegisNotas[i].Promedio.ToString("F2").PadRight(12) + " | " +
