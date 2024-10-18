@@ -145,7 +145,7 @@ namespace T2_Practica
                 Console.WriteLine("No existen registros.");
             }
 
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
         }
 
         // Método para eliminar la primera reserva de la cola
