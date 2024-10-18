@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T2_Practica
 {
-    internal class CargarPacientesRegistro
+    internal class CargarRegistroNotas
     {
         public static void PrecargarDatos(ColaNotas cola)
         {

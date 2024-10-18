@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CargaEstudiante.cs" />
-    <Compile Include="CargarPacientesRegistro.cs" />
+    <Compile Include="CargarRegistroNotas.cs" />
     <Compile Include="ColaCurso.cs" />
     <Compile Include="ColaEstudiante.cs" />
     <Compile Include="ColaNotas.cs" />

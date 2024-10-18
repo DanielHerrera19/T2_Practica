@@ -23,7 +23,7 @@ namespace T2_Practica
         static void RegistroDENotas()
         {
             // Precargar datos de pacientes al iniciar el programa
-            CargarPacientesRegistro.PrecargarDatos(Cola);
+            CargarRegistroNotas.PrecargarDatos(Cola);
             int opcion;
 
             // Definir el menú para la cola de reservas
