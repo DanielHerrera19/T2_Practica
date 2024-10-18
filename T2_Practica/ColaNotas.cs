@@ -62,7 +62,7 @@ namespace T2_Practica
                     Console.WriteLine(reservas[i].Nota1.ToString().PadRight(15) + " | " +
                                       reservas[i].Nota2.ToString().PadRight(15) + " | " +
                                       reservas[i].Nota3.ToString().PadRight(12) + " | " +
-                                      reservas[i].Promedio.ToString().PadRight(12) + " | " +
+                                      reservas[i].Promedio.ToString("F2").PadRight(12) + " | " +
                                       reservas[i].Observacion.PadRight(20));
                 }
             }
