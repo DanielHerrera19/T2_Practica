@@ -56,23 +56,23 @@ namespace T2_Practica
         {
             if (frente <= final) // Asegurarse de que hay elementos en la cola
             {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("[2] Registro de Notas");
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
-                Console.WriteLine("      Código de alumno      |      Código de Curso     |    Nota 1   |    Nota 2   |   Nota 3   |   Promedio   |    Observación   ");
+                Console.WriteLine(" Código de alumno  |    Código de Curso     |    Nota 1    |   Nota 2     |  Nota 3    |  Promedio    |   Observación   ");
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.ForegroundColor = ConsoleColor.White;
                 for (int i = frente; i <= final; i++)
                 {
-                    // Mostrar los datos de la reserva
-                    Console.WriteLine(RegisNotas[i].CodigoAlumno.ToString().PadRight(15) + " | " +
-                                      RegisNotas[i].CodigoCurso.ToString().PadRight(15) + " | " +  
-                                      RegisNotas[i].Nota1.ToString().PadRight(15) + " | " +
-                                      RegisNotas[i].Nota2.ToString().PadRight(15) + " | " +
-                                      RegisNotas[i].Nota3.ToString().PadRight(12) + " | " +
-                                      RegisNotas[i].Promedio.ToString("F2").PadRight(12) + " | " +
-                                      RegisNotas[i].Observacion.PadRight(20));
-                }
+					// Mostrar los datos de la reserva
+					Console.WriteLine(RegisNotas[i].CodigoAlumno.PadRight(18) + " | " +
+						  RegisNotas[i].CodigoCurso.PadRight(22) + " | " +
+						  RegisNotas[i].Nota1.ToString().PadRight(12) + " | " +
+						  RegisNotas[i].Nota2.ToString().PadRight(12) + " | " +
+						  RegisNotas[i].Nota3.ToString().PadRight(10) + " | " +
+						  RegisNotas[i].Promedio.ToString("F2").PadRight(12) + " | " +
+						  RegisNotas[i].Observacion.PadRight(15));
+				}
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
             }
             else

@@ -70,10 +70,10 @@ namespace T2_Practica
         static void MostrarMenu()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Registro de Notas");
             Console.WriteLine("*************************");
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("[1] Agregar Notas");
             Console.WriteLine("[2] Mostrar Registro");
             Console.WriteLine("[3] Eliminar el primer registro hecho");
@@ -537,7 +537,7 @@ namespace T2_Practica
                 // Pausa para que el usuario pueda ver el mensaje antes de limpiar la pantalla
                 if (opcion != 4) // Solo pausar si no es la opción de salida
                 {
-                    Console.WriteLine("Presiona cualquier tecla para continuar...");
+                    
                     Console.ReadKey();
                 }
 
