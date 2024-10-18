@@ -44,9 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CargarPacientesRegistro.cs" />
-    <Compile Include="ColaCurso.cs" />
     <Compile Include="ColaNotas.cs" />
-    <Compile Include="NodoCurso.cs" />
     <Compile Include="NodoNotas.cs" />
     <Compile Include="PilaNotas.cs" />
     <Compile Include="Program.cs" />
