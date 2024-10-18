@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace T2_Practica
@@ -459,6 +460,73 @@ namespace T2_Practica
             Console.WriteLine("[4] Vaciar Cola");
             ColaE = new ColaEstudiante(50); // Reinicia la cola
             Console.WriteLine("Cola vaciada exitosamente.");
+        }
+
+        public static int Pantalla_Principal()
+        {
+            int opcion = 0;
+            do
+            {
+                //Liampiar pantalla
+                Console.Clear();
+
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("======================================");
+                Console.WriteLine("|           MENU PRINCIPAL            |");
+                Console.WriteLine("======================================");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("1. Gestionar los cursos");
+                Console.WriteLine("2. Gestionar los estudiantes");
+                Console.WriteLine("3. Gestionar las notas");
+                Console.WriteLine("4. Salir");
+                Console.WriteLine("======================================");
+                //Solicitar opción 
+                Console.Write("Elige una opcion:");
+
+                // Validación de la entrada
+                if (int.TryParse(Console.ReadLine(), out opcion))
+                {
+                    // Evaluar la opción seleccionada
+                    switch (opcion)
+                    {
+                        case 1:
+
+                            break;
+
+                        case 2:
+
+                            break;
+
+                        case 3:
+
+                            break;
+
+                        case 4:
+                            // Opción de salida
+                            Console.WriteLine("Saliendo del sistema...");
+                            Thread.Sleep(1000);
+                            Environment.Exit(0);  // Cierra la consola
+                            break;
+
+                        default:
+                            Console.WriteLine("Opción incorrecta. Intenta nuevamente.");
+                            break;
+                    }
+                }
+                else
+                {
+                    // Mensaje de error si la entrada no es un número
+                    Console.WriteLine("Por favor, ingresa un número válido.");
+                }
+                // Pausa para que el usuario pueda ver el mensaje antes de limpiar la pantalla
+                if (opcion != 4) // Solo pausar si no es la opción de salida
+                {
+                    Console.WriteLine("Presiona cualquier tecla para continuar...");
+                    Console.ReadKey();
+                }
+
+            } while (opcion != 4); // Repetir el ciclo hasta que se elija la opción 4
+            return opcion;
         }
     }
 }
