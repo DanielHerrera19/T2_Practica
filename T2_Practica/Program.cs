@@ -16,7 +16,7 @@ namespace T2_Practica
         static PilaNotas pilaDeEliminados = new PilaNotas(50);
         static void Main(string[] args)
         {
-            RegistroDENotas();
+            Pantalla_Principal();
             Console.ReadKey();
         }
 
@@ -490,15 +490,15 @@ namespace T2_Practica
                     switch (opcion)
                     {
                         case 1:
-
+                            MostrarMenuCursos();
                             break;
 
                         case 2:
-
+                            EStudiantes();
                             break;
 
                         case 3:
-
+                            MostrarMenu();
                             break;
 
                         case 4:
